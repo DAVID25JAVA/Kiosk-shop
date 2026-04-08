@@ -23,9 +23,13 @@ export default function SurveyKiosk() {
     setAnswers({ ...answers, [QUESTIONS[index].id]: val });
   };
 
+  const onConfirm = () => {
+    setScreen("THANKYOU");
+    window.location.reload();
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-
       {screen === "WELCOME" && (
         <WelcomeScreen onStart={() => setScreen("QUESTION")} />
       )}
@@ -53,7 +57,7 @@ export default function SurveyKiosk() {
 
       {screen === "CONFIRM" && (
         <ConfirmDialog
-          onConfirm={() => setScreen("THANKYOU")}
+          onConfirm={onConfirm}
           onCancel={() => setScreen("QUESTION")}
         />
       )}

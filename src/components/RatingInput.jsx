@@ -6,7 +6,6 @@ const LABELS = ["Terrible", "Poor", "Okay", "Good", "Excellent"];
 export default function RatingInput({ scale, labels, value, onChange }) {
   const isNPS = scale === 10;
 
-  // ── NPS 1–10 ──────────────────────────────────────────────
   if (isNPS) {
     const getColor = (num) => {
       if (num <= 6) return "low";
@@ -54,7 +53,6 @@ export default function RatingInput({ scale, labels, value, onChange }) {
           })}
         </div>
 
-        {/* Legend */}
         <div className="flex justify-between text-xs font-medium px-1">
           <span className="flex items-center gap-1 text-violet-400">
             <span className="w-2 h-2 rounded-full bg-violet-400 inline-block" />
@@ -70,7 +68,6 @@ export default function RatingInput({ scale, labels, value, onChange }) {
           </span>
         </div>
 
-        {/* Feedback */}
         {value && (
           <div
             className={`text-center text-sm font-semibold py-2 rounded-xl
@@ -93,7 +90,6 @@ export default function RatingInput({ scale, labels, value, onChange }) {
     );
   }
 
-  // ── Emoji 1–5 ──────────────────────────────────────
   return (
     <div className="space-y-4">
       <div className="flex gap-3">
@@ -128,7 +124,6 @@ export default function RatingInput({ scale, labels, value, onChange }) {
         })}
       </div>
 
-      {/* Labels */}
       <div className="flex justify-between px-1">
         <span className="text-xs text-slate-400">
           {labels?.low ?? "Very Dissatisfied"}
@@ -138,7 +133,6 @@ export default function RatingInput({ scale, labels, value, onChange }) {
         </span>
       </div>
 
-      {/* Selected */}
       {value && (
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-1.5 bg-violet-50 text-violet-600 text-sm font-semibold px-4 py-1.5 rounded-full border border-violet-100">
